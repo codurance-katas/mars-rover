@@ -16,7 +16,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo "Here's is your artifact"
+                sh "./gradlew lib:jar"
+                archiveArtifacts artifacts: '**/*.jar'
             }
         }
     }
