@@ -2,15 +2,14 @@ package com.codurance.marsrover;
 
 public class SatNav implements Navigation {
     public char execute(char command, char curDirection, int[] curLocation){
-        char turning = curDirection;
         for (Directions direction : Directions.values() ) {
-            if (direction.actual == curDirection && command == 'L')
-                turning = direction.left;
+            if (direction.actual == curDirection && command == 'L') // To be cleaned up. Breaks one indentation/method rule
+                return direction.left;
 
             if (direction.actual == curDirection && command == 'R')
-                turning = direction.right;
+                return direction.right;
         }
 
-        return turning;
+        return curDirection;
     }
 }

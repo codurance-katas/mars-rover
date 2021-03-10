@@ -18,7 +18,6 @@ public class NavigationShould {
     public void face_west_after_receiving_left_from_north() {
         char newDirection = navigation.execute('L', 'N', new int[]{5, 5});
         assertEquals('W', newDirection);
-
     }
 
     @Test
