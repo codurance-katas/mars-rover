@@ -1,2 +1,7 @@
-package com.codurance.marsrover;public class MarsRover {
+package com.codurance.marsrover;
+
+public class MarsRover {
+
+
+
 }

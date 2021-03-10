@@ -1,2 +1,7 @@
-package com.codurance.marsrover;public interface Navigation {
+package com.codurance.marsrover;
+
+public interface Navigation {
+
+
+
 }

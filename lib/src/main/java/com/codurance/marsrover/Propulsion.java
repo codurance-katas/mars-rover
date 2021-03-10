@@ -1,2 +1,6 @@
-package com.codurance.marsrover;public interface Propulsion {
+package com.codurance.marsrover;
+
+public interface Propulsion {
+
+
 }
