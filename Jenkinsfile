@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('* * * * 1-5')
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -19,6 +23,12 @@ pipeline {
                 sh "./gradlew lib:jar"
                 archiveArtifacts artifacts: '**/build/**/*.jar'
             }
+        }
+    }
+    
+    post {
+        always {
+            junit '**/test-results/**/*.xml'
         }
     }
 }
