@@ -11,6 +11,9 @@ public class SatNav implements Navigation {
         if(curDirection == 'S' && command == 'L') return 'E';
         if(curDirection == 'S' && command == 'R') return 'W';
 
-        return 'S';
+        if(curDirection == 'E' && command == 'L') return 'S';
+        if(curDirection == 'E' && command == 'R') return 'N';
+
+        return curDirection;
     }
 }
