@@ -39,4 +39,22 @@ public class NavigationShould {
     assertEquals('N', newDirection);
   }
 
+  @Test
+  public void face_east_after_receiving_left_from_position_south(){
+    char newDirection = navigation.execute('L', 'S', new int[]{5,5});
+    assertEquals('E', newDirection);
+  }
+
+  @Test
+  public void face_west_after_receiving_right_from_position_south(){
+    char newDirection = navigation.execute('R', 'S', new int[]{5,5});
+    assertEquals('W', newDirection);
+  }
+
+  @Test
+  public void face_south_after_receiving_left_from_position_east(){
+    char newDirection = navigation.execute('L', 'E', new int[]{5,5});
+    assertEquals('S', newDirection);
+  }
+
 }
