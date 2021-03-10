@@ -16,10 +16,10 @@ public class MarsRover {
     public void execute(String inputCommand) {
         for (char command : inputCommand.toCharArray()){
             if (command  == 'M') {
-                this.curLocation = propulsion.execute(command);
+                this.curLocation = propulsion.execute(command, curDirection, curLocation);
             }
             if (command == 'L' || command == 'R') {
-                this.curDirection = navigation.execute(command);
+                this.curDirection = navigation.execute(command, curDirection, curLocation);
             }
         }
     }
