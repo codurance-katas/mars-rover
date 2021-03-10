@@ -2,18 +2,15 @@ package com.codurance.marsrover;
 
 public class SatNav implements Navigation {
     public char execute(char command, char curDirection, int[] curLocation){
-        if(curDirection == 'N' && command == 'L') return 'W';
-        if(curDirection == 'N' && command == 'R') return 'E';
+        char turning = curDirection;
+        for (Directions direction : Directions.values() ) {
+            if (direction.actual == curDirection && command == 'L')
+                turning = direction.left;
 
-        if(curDirection == 'W' && command == 'L') return 'S';
-        if(curDirection == 'W' && command == 'R') return 'N';
+            if (direction.actual == curDirection && command == 'R')
+                turning = direction.right;
+        }
 
-        if(curDirection == 'S' && command == 'L') return 'E';
-        if(curDirection == 'S' && command == 'R') return 'W';
-
-        if(curDirection == 'E' && command == 'L') return 'S';
-        if(curDirection == 'E' && command == 'R') return 'N';
-
-        return curDirection;
+        return turning;
     }
 }

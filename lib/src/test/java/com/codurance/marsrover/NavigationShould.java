@@ -15,52 +15,52 @@ public class NavigationShould {
     }
 
     @Test
-    public void face_west_after_receiving_left() {
+    public void face_west_after_receiving_left_from_north() {
         char newDirection = navigation.execute('L', 'N', new int[]{5, 5});
         assertEquals('W', newDirection);
 
     }
 
     @Test
-    public void face_east_after_receiving_right() {
+    public void face_east_after_receiving_right_from_north() {
         char newDirection = navigation.execute('R', 'N', new int[]{5, 5});
         assertEquals('E', newDirection);
     }
 
     @Test
-    public void face_south_after_receiving_left_from_position_west() {
+    public void face_south_after_receiving_left_from_west() {
         char newDirection = navigation.execute('L', 'W', new int[]{5, 5});
         assertEquals('S', newDirection);
     }
 
     @Test
-    public void face_north_after_receiving_right_from_position_west() {
+    public void face_north_after_receiving_right_from_west() {
         char newDirection = navigation.execute('R', 'W', new int[]{5, 5});
         assertEquals('N', newDirection);
     }
 
     @Test
-    public void face_east_after_receiving_left_from_position_south() {
+    public void face_east_after_receiving_left_from_south() {
         char newDirection = navigation.execute('L', 'S', new int[]{5, 5});
         assertEquals('E', newDirection);
     }
 
     @Test
-    public void face_west_after_receiving_right_from_position_south() {
+    public void face_west_after_receiving_right_from_south() {
         char newDirection = navigation.execute('R', 'S', new int[]{5, 5});
         assertEquals('W', newDirection);
     }
 
     @Test
-    public void face_south_after_receiving_left_from_position_east() {
+    public void face_north_after_receiving_left_from_east() {
         char newDirection = navigation.execute('L', 'E', new int[]{5, 5});
-        assertEquals('S', newDirection);
+        assertEquals('N', newDirection);
     }
 
     @Test
-    public void face_north_after_receiving_right_from_position_east() {
+    public void face_south_after_receiving_right_from_east() {
         char newDirection = navigation.execute('R', 'E', new int[]{5, 5});
-        assertEquals('N', newDirection);
+        assertEquals('S', newDirection);
     }
 
 }
